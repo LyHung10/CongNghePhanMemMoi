@@ -1,5 +1,5 @@
 {
-  "name": "baitap2_1",
+  "name": "baitap3",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -7,7 +7,7 @@
     "start": "nodemon --exec babel-node src/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nguyen Ly Hung",
   "license": "ISC",
   "description": "",
   "dependencies": {

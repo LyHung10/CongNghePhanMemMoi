@@ -2,7 +2,7 @@ import { Sequelize } from 'sequelize';
 //const { Sequelize } = require('sequelize');//ES5 module
 
 // Option 3: Passing parameters separately (other dialects)
-const sequelize = new Sequelize('CNPM', 'root', '103204', {
+const sequelize = new Sequelize('CNPM', 'root', 'root', {
     host: 'localhost',
     dialect: 'mysql',
     logging: false
