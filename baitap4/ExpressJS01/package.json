@@ -1,0 +1,40 @@
+{
+  "name": "expressjs01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/server.js",
+    "start": "nodemon ./src/server.js",
+    "seed:users": "node ./src/seeders/userSeeder.js",
+    "migrate:user": "node ./src/migrations/addPhoneToUser.js"
+
+  },
+  "keywords": [
+    "express",
+    "nodejs",
+    "api",
+    "nodejs",
+    "reactjs"
+  ],
+  "author": "Nguyen Ly Hung",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.3",
+    "@babel/node": "^7.28.0",
+    "@babel/preset-env": "^7.28.3",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "nodemon": "^3.1.10"
+  }
+}

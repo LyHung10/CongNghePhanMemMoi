@@ -48,7 +48,7 @@ const getEditCRUD = async (req: Request, res: Response) => {
 
   if (!isNaN(userId)) {
     const userData = await CRUDService.getUserInfoById(userId);
-    return res.render("users/editUser.ejs", {
+    return res.render("users/updateUser.ejs", {
       data: userData,
     });
   } else {
@@ -60,11 +60,10 @@ const getEditCRUD = async (req: Request, res: Response) => {
 // update user
 const putCRUD = async (req: Request, res: Response) => {
   let data = req.body;
-  let data1 = await CRUDService.updateUser(data); 
-  return res.render("users/findAllUser.ejs", {
-    datalist: data1,
-  });
+  await CRUDService.updateUser(data); 
+  return res.redirect("/get-crud"); // load lại danh sách
 };
+
 
 // delete user
 const deleteCRUD = async (req: Request, res: Response) => {

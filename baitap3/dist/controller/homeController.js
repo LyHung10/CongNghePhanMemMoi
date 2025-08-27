@@ -40,7 +40,7 @@ const getEditCRUD = async (req, res) => {
     const userId = Number(req.query.id); // ép thẳng sang number
     if (!isNaN(userId)) {
         const userData = await CRUDService.getUserInfoById(userId);
-        return res.render("users/editUser.ejs", {
+        return res.render("users/updateUser.ejs", {
             data: userData,
         });
     }
@@ -51,10 +51,8 @@ const getEditCRUD = async (req, res) => {
 // update user
 const putCRUD = async (req, res) => {
     let data = req.body;
-    let data1 = await CRUDService.updateUser(data);
-    return res.render("users/findAllUser.ejs", {
-        datalist: data1,
-    });
+    await CRUDService.updateUser(data);
+    return res.redirect("/get-crud"); // load lại danh sách
 };
 // delete user
 const deleteCRUD = async (req, res) => {

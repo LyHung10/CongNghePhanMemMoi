@@ -36,13 +36,13 @@ export const getUserInfoById = async (userId: number): Promise<User | null> => {
 
 // Update user
 export const updateUser = async (data: any): Promise<User[] | []> => {
-  const user = await User.findOne({ where: { id: data.id } });
+  const user = await User.findOne({ where: { id: Number(data.id) } });
   if (user) {
     user.firstName = data.firstName;
     user.lastName = data.lastName;
     user.address = data.address;
     await user.save();
-    return await User.findAll();
+    return await User.findAll({ raw: true }); // trả mảng để render danh sách
   }
   return [];
 };
