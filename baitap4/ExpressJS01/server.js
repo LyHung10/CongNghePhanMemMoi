@@ -3,9 +3,12 @@ require('dotenv').config();
 const express = require('express'); //commonjs
 const configViewEngine = require('./src/config/viewEngine');
 const apiRoutes = require('./src/routes/api');
+const productRoutes = require('./src/routes/productRoutes');
 const connection = require('./src/config/database');
 const { getHomepage } = require('./src/controllers/homeController');
 const cors = require('cors');
+const categoryRoutes = require('./src/routes/categoryRoute');
+
 
 const app = express(); //cấu hình app là express
 //cấu hình port, nếu tìm thấy port trong env, không thì trả về 8888
@@ -23,6 +26,8 @@ app.use("/", webAPI);
 
 //khai bao route cho API
 app.use('/v1/api', apiRoutes);
+app.use('/v1/product', productRoutes);
+app.use("/v1/category", categoryRoutes);
 
 (async () => {
     try {

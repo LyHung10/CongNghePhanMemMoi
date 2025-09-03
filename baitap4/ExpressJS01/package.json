@@ -8,8 +8,8 @@
     "dev": "nodemon ./src/server.js",
     "start": "nodemon ./src/server.js",
     "seed:users": "node ./src/seeders/userSeeder.js",
+    "seed:products": "node ./src/seeders/productSeeder.js",
     "migrate:user": "node ./src/migrations/addPhoneToUser.js"
-
   },
   "keywords": [
     "express",
