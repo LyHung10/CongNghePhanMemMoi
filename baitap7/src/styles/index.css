@@ -1,0 +1,21 @@
+:root{
+  --cui-primary: #0b76ff;
+  --cui-danger: #ff4d4f;
+  --cui-border: #e6e6e6;
+  --cui-radius: 8px;
+  --cui-font: system-ui, -apple-system, 'Segoe UI', Roboto;
+}
+.cui-btn{ padding:8px 12px; border-radius:6px; border:0; cursor:pointer; font-weight:600; }
+.cui-btn--primary{ background:var(--cui-primary); color:#fff; }
+.cui-btn--danger{ background:var(--cui-danger); color:#fff; }
+.cui-btn--ghost{ background:transparent; border:1px solid var(--cui-border); }
+.cui-input{ padding:8px; border:1px solid var(--cui-border); border-radius:6px; }
+.cui-card{ padding:12px; border-radius:8px; border:1px solid var(--cui-border); background:#fff; }
+.cui-modal-backdrop{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.4); z-index:9999; }
+.cui-modal{ width:90%; max-width:560px; background:#fff; border-radius:8px; overflow:hidden; }
+.cui-modal-header{ display:flex; justify-content:space-between; align-items:center; padding:12px; border-bottom:1px solid var(--cui-border); }
+.cui-modal-body{ padding:16px; }
+.cui-cart-item{ display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px dashed var(--cui-border); }
+.cui-cart-left{ display:flex; gap:12px; align-items:center; }
+.cui-cart-img{ width:56px; height:56px; object-fit:cover; border-radius:6px; }
+.cui-cart-footer{ display:flex; justify-content:space-between; align-items:center; margin-top:12px; }
