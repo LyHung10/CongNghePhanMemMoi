@@ -8,8 +8,10 @@ const UserPage = () => {
     useEffect(() => {
         const fetchUser = async () => {
             const res = await getUserApi();
-            if (res?.message) {
-                setDataSource(res);
+            console.log(">>> check res user: ", res);
+            if (Array.isArray(res)) {
+                setDataSource(res);   // set mảng users vào Table
+
             } else {
                 notification.error({
                     message: "Unauthorized",

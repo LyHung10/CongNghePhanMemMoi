@@ -48,6 +48,7 @@ const getEditCRUD = async (req: Request, res: Response) => {
 
   if (!isNaN(userId)) {
     const userData = await CRUDService.getUserInfoById(userId);
+    console.log("dsadsadsadsadas", userData);
     return res.render("users/updateUser.ejs", {
       data: userData,
     });
@@ -60,7 +61,7 @@ const getEditCRUD = async (req: Request, res: Response) => {
 // update user
 const putCRUD = async (req: Request, res: Response) => {
   let data = req.body;
-  await CRUDService.updateUser(data); 
+  await CRUDService.updateUser(data);
   return res.redirect("/get-crud"); // load lại danh sách
 };
 

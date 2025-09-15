@@ -28,7 +28,6 @@ function levenshteinDistance(a, b) {
     return matrix[b.length][a.length];
 }
 
-// Hàm tính độ tương đồng (similarity từ 0 → 1)
 function similarity(a, b) {
     const distance = levenshteinDistance(a.toLowerCase(), b.toLowerCase());
     const maxLen = Math.max(a.length, b.length);

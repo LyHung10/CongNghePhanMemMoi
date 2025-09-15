@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { UsergroupAddOutlined, HomeOutlined, SettingOutlined, ShoppingOutlined } from '@ant-design/icons';
+import { UsergroupAddOutlined, HomeOutlined, SettingOutlined, ShoppingOutlined, LoginOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
@@ -25,6 +25,20 @@ const Header = () => {
             key: 'user',
             icon: <UsergroupAddOutlined />,
         }] : []),
+
+        {
+            label: <Link to="/Login">Login</Link>,
+            key: 'login',
+            icon: <LoginOutlined> </LoginOutlined>
+
+        },
+
+        {
+            label: <Link to="/Register">Register</Link>,
+            key: 'register',
+
+        },
+
         {
             label: `Welcome ${auth?.user?.email ?? ""}`,
             key: 'subMenu',

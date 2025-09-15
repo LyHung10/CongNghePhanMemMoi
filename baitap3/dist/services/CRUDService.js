@@ -36,6 +36,7 @@ export const updateUser = async (data) => {
         user.lastName = data.lastName;
         user.address = data.address;
         await user.save();
+        console.log(user);
         return await User.findAll({ raw: true }); // trả mảng để render danh sách
     }
     return [];

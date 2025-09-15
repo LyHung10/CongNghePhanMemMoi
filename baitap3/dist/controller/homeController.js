@@ -40,6 +40,7 @@ const getEditCRUD = async (req, res) => {
     const userId = Number(req.query.id); // ép thẳng sang number
     if (!isNaN(userId)) {
         const userData = await CRUDService.getUserInfoById(userId);
+        console.log("dsadsadsadsadas", userData);
         return res.render("users/updateUser.ejs", {
             data: userData,
         });

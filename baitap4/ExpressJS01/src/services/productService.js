@@ -1,7 +1,7 @@
 const Product = require("../models/product");
 const Category = require("../models/category");
 const { similarity } = require("../utils/levenshtein");
-const getProductsByCategory = async (categoryId, page = 1, limit = 5) => {
+const getProductsByCategory = async (categoryId, page = 1, limit = 4) => {
     const query = categoryId ? { categoryId } : {};
     const skip = (page - 1) * limit;
 

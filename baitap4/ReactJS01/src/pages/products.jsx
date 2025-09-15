@@ -10,7 +10,7 @@ const ProductsPage = () => {
     const [categoryId, setCategoryId] = useState("");
     const { Search } = Input;
     const [searchText, setSearchText] = useState("");
-    const [priceRange, setPriceRange] = useState([0, 200000]);
+    const [priceRange, setPriceRange] = useState([0, 500000]);
     const [discount, setDiscount] = useState(null);
     const [minViews, setMinViews] = useState(null);
 
@@ -67,55 +67,6 @@ const ProductsPage = () => {
         }
     };
 
-
-    // // Fetch products (chỉ chạy khi mode = all)
-    // const fetchProducts = async (reset = false) => {
-    //     if (mode !== "all") return; // tránh bị ghi đè kết quả search
-    //     try {
-    //         setLoading(true);
-    //         let url = `/v1/product?page=${page}&limit=${limit}`;
-    //         if (categoryId) {
-    //             url += `&categoryId=${categoryId}`;
-    //         }
-
-    //         console.log("API fetch:", `${axios.defaults.baseURL}${url}`);
-    //         const res = await axios.get(url);
-
-    //         if (res && Array.isArray(res.data)) {
-    //             if (reset) {
-    //                 setProducts(res.data);
-    //             } else {
-    //                 setProducts((prev) => [...prev, ...res.data]);
-    //             }
-    //             setHasMore(res.data.length === limit);
-    //         }
-    //     } catch (err) {
-    //         console.error("Lỗi fetch products:", err);
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
-    // const fetchFilteredProducts = async () => {
-    //     try {
-    //         setLoading(true);
-    //         let url = `/v1/product/filter?minPrice=${priceRange[0]}&maxPrice=${priceRange[1]}`;
-    //         if (categoryId) url += `&categoryId=${categoryId}`;
-    //         if (discount) url += `&discount=${discount}`;
-    //         if (minViews) url += `&minViews=${minViews}`;
-
-    //         console.log("API filter:", `${axios.defaults.baseURL}${url}`);
-    //         const res = await axios.get(url);
-
-    //         if (res && Array.isArray(res.data)) {
-    //             setProducts(res.data);
-    //             setHasMore(false); // filter trả về kết quả đầy đủ → tắt lazy load
-    //         }
-    //     } catch (err) {
-    //         console.error("Lỗi fetch filter:", err);
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
     const fetchData = async (reset = false) => {
         try {
             setLoading(true);
@@ -163,11 +114,6 @@ const ProductsPage = () => {
         if (mode === "all" && page > 1) fetchData();
     }, [page]);
 
-    // Load lần đầu
-    // useEffect(() => {
-    //     fetchCategories();
-    //     fetchProducts(true);
-    // }, []);
 
     useEffect(() => {
         setPage(1);
@@ -223,7 +169,7 @@ const ProductsPage = () => {
                         <Slider
                             range
                             min={0}
-                            max={200000}
+                            max={500000}
                             step={10000}
                             value={priceRange}
                             onChange={(val) => setPriceRange(val)}
@@ -257,13 +203,13 @@ const ProductsPage = () => {
                         />
                     </div>
 
-                    {/* khi bấm nút Áp dụng lọc */}
+                    {/* khi bấm nút Áp dụng lọc
                     <Button type="primary" onClick={() => {
                         setPage(1);
                         fetchData(true);
                     }} block>
                         Áp dụng lọc
-                    </Button>
+                    </Button> */}
 
 
                 </Col>
